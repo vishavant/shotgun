@@ -1,0 +1,77 @@
+{% extends 'quiz/base.html' %}
+{% load static %}
+
+{% block custom_css %}
+
+<style>
+.custom_card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
+
+{% endblock custom_css %}
+
+
+{% block page_title %}
+quiz
+{% endblock page_title %}
+
+
+
+{% block custom_js %}
+
+<script src="{% static 'quiz/js/quiz.js' %}" defer></script>
+
+{% endblock custom_js %}
+
+
+{% block page_heading %}
+<div class="container mt-5">
+  <nav>
+    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
+      </li>
+    </ul>
+  </nav>
+</div>
+{% endblock page_heading %}
+
+
+{% block page_content %}
+
+
+
+<div class="container mt-5">
+  {% for obj in object_list %}
+  <div class="row shadow p-3 mb-5 bg-body-tertiary align-items-center">
+    <div class="col-sm-2">
+      <div class="quiz-thumbnail">
+        <img src="{{ obj.quiz_thumbnail.url }}" style="width: 176px;
+        height: 120px" alt="quiz-thumbnail">
+      </div>
+    </div> 
+    <div class="col-sm-8">
+      <h4>{{obj.name}}</h4>
+      <p>Level: {{obj.level}}</p>
+      <p>No. of Participant - {{obj.no_of_participants}}</p>
+    </div> 
+    <div class="col-sm-2">
+      <a href="{% url 'quiz:quiz-view' pk=obj.pk %}" class="btn btn-primary">View Quiz</a> <br>
+      <span>Last Update at: {{obj.updated_at}}</span>
+    </div> 
+  </div>
+  {% endfor %}
+</div>
+
+
+
+{% endblock page_content %}
