@@ -1,0 +1,44 @@
+
+.attemp-quiz{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.option-body{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.option1{
+    width: 16rem;
+    height: 5.5rem;
+    border-radius: 10px;
+    background-color: rgb(95, 196, 95);
+    cursor: pointer;
+}
+.option2{
+    width: 16rem;
+    height: 5.5rem;
+    border-radius: 10px;
+    background-color: rgb(255, 61, 22);
+    cursor: pointer;
+}
+.option3{
+    width: 16rem;
+    height: 5.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(87, 15, 254);
+}
+.option4{
+    cursor: pointer;
+    width: 16rem;
+    height: 5.5rem;
+    border-radius: 10px;
+    
+    background-color: rgb(246, 217, 3);
+}

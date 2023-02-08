@@ -29,3 +29,21 @@ def quiz_view(request, pk):
 
 def homepage(request):
     return render(request, "quiz/homepage.html")
+
+
+
+def display_quiz(request):
+    return render(request, "quiz/display_quiz.html")
+
+
+def leaderboard(request):
+    return render(request, "quiz/leaderboard.html")
+
+
+def attemp_quiz(request):
+    return render(request, "quiz/attemp_quiz.html")
+
+
+
+def test_result(request): #This will show result right after the test submission
+    return render(request, "quiz/test_result.html")

@@ -1,0 +1,37 @@
+{% extends 'quiz/base.html' %}
+{% load static %}
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'quiz/css/attemp_quiz.css' %}">
+{% endblock custom_css %}
+
+{% block page_title %}
+quiz
+{% endblock page_title %}
+
+
+{% block page_content %}
+
+<div class="container attemp-quiz">
+        <div class="question-body">
+            <h2>Which of the following is correct??</h2>
+            <div class="question-media">
+                <img src="{% static 'quiz/images/dataset-cover.png' %}" style="width:500px" alt="...">
+            </div>
+        </div>
+        <div class="option-body">
+            <div class="option1">
+                <h4>London</h4>
+            </div>
+            <div class="option2">
+                India
+            </div>
+            <div class="option3">
+                Japan
+            </div>
+            <div class="option4">
+                Germany
+            </div>
+            <a href="{% url 'quiz:test-result' %}" class="btn btn-primary">Submit</a>
+        </div>
+</div>
+{% endblock page_content %}
